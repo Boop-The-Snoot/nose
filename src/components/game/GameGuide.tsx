@@ -13,6 +13,7 @@ import { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { GiHoneypot, GiNoseFront, GiTrophy } from "react-icons/gi";
 import { IoPawSharp } from "react-icons/io5";
+import { GameFullGuide } from "./GameFullGuide";
 
 export function GameGuide() {
   const [collapsed, setCollapsed] = useState(true);
@@ -25,7 +26,7 @@ export function GameGuide() {
         <Card.Header>
           <Collapsible.Trigger asChild>
             <Button variant="ghost" gap={2}>
-              <Heading>🐻🍯 BoopTheSnoot: A Beary Sweet Adventure!</Heading>
+              <Heading>🐻🍯 BoopTheSnoot: A Beary Sweet Adventure</Heading>
               <Box
                 transform={collapsed ? "rotate(0deg)" : "rotate(180deg)"}
                 transition="transform 0.2s ease-in-out"
@@ -90,6 +91,11 @@ export function GameGuide() {
             </TimelineRoot>
           </Collapsible.Content>
         </Card.Body>
+        {!collapsed && (
+          <Card.Footer>
+            <GameFullGuide />
+          </Card.Footer>
+        )}
       </Collapsible.Root>
     </Card.Root>
   );

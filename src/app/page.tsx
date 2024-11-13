@@ -1,6 +1,7 @@
 import { ConnectWalletButton } from "@/components/ConnectWalletButton";
 import { ActionDialog } from "@/components/game/ActionDialog";
 import { GameGuide } from "@/components/game/GameGuide";
+import { Leaderboard } from "@/components/game/Leaderboard";
 import { ColorModeButton } from "@/components/ui/color-mode";
 import { StatLabel, StatRoot, StatValueText } from "@/components/ui/stat";
 import {
@@ -43,7 +44,12 @@ export default function Home() {
             <Card.Header>
               <Card.Title>Your Stats</Card.Title>
             </Card.Header>
-            <Card.Body gap={2} flexDirection={{ base: "column", md: "row" }} alignItems="center" justifyContent="center">
+            <Card.Body
+              gap={2}
+              flexDirection={{ base: "column", md: "row" }}
+              alignItems="center"
+              justifyContent="center"
+            >
               <StatRoot maxW="200px" borderWidth="1px" p="4" rounded="md">
                 <HStack justify="space-between">
                   <StatLabel>Rank</StatLabel>
@@ -75,6 +81,7 @@ export default function Home() {
           </Card.Root>
           <GameGuide />
         </Flex>
+        <Leaderboard />
       </Container>
     </>
   );
