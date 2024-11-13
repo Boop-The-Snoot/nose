@@ -1,8 +1,8 @@
 "use client";
 
 import { APP_DESCRIPTION, APP_NAME, PROD_DOMAIN } from "@/config";
-import { projectId, wagmiAdapter } from "@/config/wagmi.confg";
-import { arbitrum, mainnet } from "@reown/appkit/networks";
+import { networks, projectId, wagmiAdapter } from "@/config/wagmi.confg";
+import { AppKitNetwork } from "@reown/appkit/networks";
 import { createAppKit } from "@reown/appkit/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { type ReactNode } from "react";
@@ -24,8 +24,8 @@ const metadata = {
 export const modal = createAppKit({
   adapters: [wagmiAdapter],
   projectId,
-  networks: [mainnet, arbitrum],
-  defaultNetwork: mainnet,
+  networks: networks as unknown as [AppKitNetwork, ...AppKitNetwork[]],
+  defaultNetwork: networks[0],
   metadata: metadata,
   features: {
     analytics: true,
