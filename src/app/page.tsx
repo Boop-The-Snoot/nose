@@ -1,6 +1,6 @@
 import { ActionDialog } from "@/components/game/ActionDialog";
 import { ColorModeButton } from "@/components/ui/color-mode";
-import { ConnectWalletButton } from "@/components/ui/ConnectWalletButton";
+import { ConnectWalletButton } from "@/components/ConnectWalletButton";
 import { Box, Container, Flex, Heading } from "@chakra-ui/react";
 
 export default function Home() {
