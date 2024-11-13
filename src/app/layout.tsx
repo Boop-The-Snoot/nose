@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import WagmiProvider from "@/components/providers/WagmiProvider";
+import { Toaster } from "@/components/ui/toaster";
 import { APP_DESCRIPTION, APP_NAME, PROD_DOMAIN } from "@/config";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
@@ -21,7 +22,10 @@ export default async function RootLayout({ children }: PropsWithChildren) {
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider>
-          <WagmiProvider cookies={cookies}>{children}</WagmiProvider>
+          <WagmiProvider cookies={cookies}>
+            <Toaster />
+            {children}
+          </WagmiProvider>
         </ThemeProvider>
       </body>
     </html>
